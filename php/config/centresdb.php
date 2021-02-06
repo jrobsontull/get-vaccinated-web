@@ -10,7 +10,7 @@
 
     $hostname = "db5001671370.hosting-data.io";
     $username = "dbu879258";
-    $password = "mU*xE$Zoqr2";
+    $password = "mU*xE$Zoqr2i";
     $dbname = "dbs1384964";
     
     $connection = mysqli_connect($hostname, $username, $password, $dbname) or die("Database connection not established.")
