@@ -48,8 +48,8 @@ div.central-panel {
 	padding: 50px;
 	border-radius: 10px;
 }
-/*
-#register-further,*/ #login {
+
+#register-further, #login {
 	display: none;
 }
 

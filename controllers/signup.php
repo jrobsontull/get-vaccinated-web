@@ -12,10 +12,10 @@
     if(isset($_POST["submit"])) {
         $firstName     = $_POST["firstName"];
         $lastName      = $_POST["lastName"];
-        $email         = $_POST["email"];
+        $email         = $_POST["email-hidden"];
         $address       = $_POST["address"];
         $phone         = $_POST["mobile"];
-        $password      = $_POST["password"];
+        $password      = $_POST["password-hidden"];
         $birthDate     = $_POST["dob"];
 
         // check if email already exist
