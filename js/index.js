@@ -1,3 +1,4 @@
+/*
 function nextRegisterDetails() {
 	//document.getElementById("register-intial").style.display = "none";
 	//document.getElementById("register-further").style.display = "block";
@@ -20,4 +21,4 @@ function backToRegister() {
 		$('#register-div').fadeIn();
 		$('#register-intial').fadeIn();
 	});
-}
+}*/

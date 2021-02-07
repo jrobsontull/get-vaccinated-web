@@ -1,3 +1,7 @@
+<?php include('controllers/signup.php'); ?>
+<?php include('controllers/signin.php'); ?>
+<?php include('config/usersdb.php'); ?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,19 +40,19 @@
 
 <div class="central-panel">
 	<div id="register-div">
-		<form id="registration">
+		<form id="registration" method="post" action="">
 			<div class="center-row-item">
 				<h3>Sign up</h3>
 			</div>
 			<div id="register-intial" class="">
 				<div class="form-row">
 					<label class="">Email address</label>
-					<input type="email" class="form-control" aria-describedby="emailHelp">
+					<input type="email" name="email" class="form-control" aria-describedby="emailHelp">
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="form-row">
 					<label class="">Password</label>
-		    		<input type="password" class="form-control col-6" id="password" aria-describedby="passwordHelpBlock">
+		    		<input type="password" name="password" class="form-control col-6" id="passBox" aria-describedby="passwordHelpBlock">
 		    		<div id="passwordHelpBlock" class="form-text">
 		    			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 		    		</div>
@@ -60,29 +64,29 @@
 			<div id="register-further">
 				<div class="form-row">
 					<label class="">First name</label>
-					<input type="text" class="form-control" id="first-name">
+					<input type="text" name="firstName" class="form-control" id="first-name">
 				</div>
 				<div class="form-row">
 					<label class="">Last name</label>
-					<input type="text" class="form-control" id="last-name">
+					<input type="text" name="secondName" class="form-control" id="last-name">
 				</div>
 				<div class="form-row">
 					<label class="">Address</label>
-					<input type="text" class="form-control" id="address">
+					<input type="text" name="address" class="form-control" id="address">
 				</div>
 				<div class="form-row">
 					<label class="">Mobile</label>
-					<input type="tel" class="form-control" id="mobile">
+					<input type="tel" name="mobile" class="form-control" id="mobile">
 				</div>
 				<div class="form-row">
 					<label class="">Birth date</label>
-					<input type="date" class="form-control" id="birth-date">
+					<input type="date" name="dob" class="form-control" id="birth-date">
 				</div>
 				<div class="form-row">
 			    	<div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 				</div>
 				<div class="center-row-item form-row">
-					<button type="submit" class="btn btn-outline-primary btn-block">Register</button>
+					<button type="submit" name="register" class="btn btn-outline-primary btn-block">Register</button>
 				</div>
 			</div>
 		</form>
@@ -106,7 +110,7 @@
 			     <div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 			</div>
 			<div class="center-row-item">
-				<button type="submit" class="btn btn-outline-primary btn-block">Log in</button>
+				<button type="submit" name="login" class="btn btn-outline-primary btn-block">Log in</button>
 			</div>
 		</form>
 		<div class="center-row-item form-row"><p>Back to <span class="login-txt" onclick="backToRegister()">registration</span></p></div>
