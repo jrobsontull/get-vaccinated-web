@@ -31,10 +31,10 @@ h1 {
 	max-width: 600px;
 }
 
-.to-register span.login-txt {
+.login-txt {
 	font-weight: bold;
 }
 
-.to-register span.login-txt:hover {
+.login-txt:hover {
 	cursor: pointer;
 }
