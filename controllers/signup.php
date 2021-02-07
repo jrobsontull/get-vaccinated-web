@@ -20,7 +20,7 @@
 	}
 
 	// Check if email already exist
-    $email_check_query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email}' ");
+    $email_check_query = mysqli_query($userdb, "SELECT * FROM users WHERE email = '{$email}' ");
     $rowCount = mysqli_num_rows($email_check_query);
 
 	// Verify if form values are not empty
@@ -32,13 +32,13 @@
             ';
         } else {
         	// clean the form data before sending to database
-			$_first_name = mysqli_real_escape_string($connection, $firstName);
-			$_last_name = mysqli_real_escape_string($connection, $lastName);
-			$_email = mysqli_real_escape_string($connection, $email);
-			$_address = mysqli_real_escape_string($connection, $address);
-			$_mobile = mysqli_real_escape_string($connection, $mobile);
-			$_password = mysqli_real_escape_string($connection, $password);
-			$_birth_date = mysqli_real_escape_string($connection, $birthDate);
+			$_first_name = mysqli_real_escape_string($userdb, $firstName);
+			$_last_name = mysqli_real_escape_string($userdb, $lastName);
+			$_email = mysqli_real_escape_string($userdb, $email);
+			$_address = mysqli_real_escape_string($userdb, $address);
+			$_mobile = mysqli_real_escape_string($userdb, $mobile);
+			$_password = mysqli_real_escape_string($userdb, $password);
+			$_birth_date = mysqli_real_escape_string($userdb, $birthDate);
 
 			if(!preg_match("/^[a-zA-Z ]*$/", $_first_name)) {
 				$f_NameErr = '<div class="alert alert-danger">Only letters and white space allowed.</div>';
@@ -69,10 +69,10 @@
 				$sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
                     date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$mobile}', '{$password_hash}', '{$birthDate}', '{$token}', '0', now())";
 				// Create mysql query
-				$sqlQuery = mysqli_query($usersdb, $sql);
+				$sqlQuery = mysqli_query($userdb, $sql);
                     
 				if(!$sqlQuery){
-					die("MySQL query failed!" . mysqli_error($connection));
+					die("MySQL query failed!" . mysqli_error($userdb));
 				} elseif ($sqlQuery) {
 					$success_msg = 'Click on the activation link to verify your email. <br><br><a href="http://get-vaccinated.uk/dom8063/user_verificaiton.php?token='.$token.'"> Click here to verify email</a>';
 				}
