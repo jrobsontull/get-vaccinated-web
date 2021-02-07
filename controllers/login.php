@@ -61,7 +61,7 @@
                        $_SESSION['email'] = $email;
                        $_SESSION['address'] = $address;
                        $_SESSION['phone'] = $phone;
-                       $_SESSION['birthDate'] = $birthDate
+                       $_SESSION['birthDate'] = $birthDate;
                        $_SESSION['token'] = $token;
 
                     } else {

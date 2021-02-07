@@ -9,10 +9,10 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://get-vaccinated.uk/index.php">Sign in</a>
+                    <a class="nav-link" href="http://get-vaccinated.uk/domrt8063/index.php">Sign in</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://get-vaccinated.uk/signup.php">Sign up</a>
+                    <a class="nav-link" href="http://get-vaccinated.uk/domrt8063/signup.php">Sign up</a>
                 </li>
             </ul>
         </div>

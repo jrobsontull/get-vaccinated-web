@@ -3,13 +3,13 @@
 
    
     // Database connection
-    include('config/userdb.php');
+    include('config/usersdb.php');
 
     // Swiftmailer lib
     require_once './lib/vendor/autoload.php';
     
     // Error & success messages
-    global $success_msg, $email_exist, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr, $_addressErr, $birthDateErr
+    global $success_msg, $email_exist, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr, $_addressErr, $birthDateErr;
     global $fNameEmptyErr, $lNameEmptyErr, $emailEmptyErr, $mobileEmptyErr, $passwordEmptyErr, $birthDateEmptyErr, $addressEmptyErr, $email_verify_err, $email_verify_success;
     
     // Set empty form vars for validation mapping
@@ -51,7 +51,7 @@
                 $_birth_date = mysqli_real_escape_string($connection, $birthDate);
 
                 // perform validation
-                if(!preg_match("/^[a-zA-Z ]*$/", $_first_name)) {
+                /* if(!preg_match("/^[a-zA-Z ]*$/", $_first_name)) {
                     $f_NameErr = '<div class="alert alert-danger">
                             Only letters and white space allowed.
                         </div>';
@@ -66,11 +66,12 @@
                             Email format is invalid.
                         </div>';
                 }
-                if(!preg_match("/^[0-9]{14}+$/", $_phone)) {
+                if(!preg_match("/^[0-9]{10}+$/", $_phone)) {
                     $_mobileErr = '<div class="alert alert-danger">
                             Please enter a valid number.
                         </div>';
                 }
+                */
                 if(!preg_match("/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{6,20}$/", $_password)) {
                     $_passwordErr = '<div class="alert alert-danger">
                              Password should be between 6 to 20 charcters long, contains atleast one special chacter, lowercase, uppercase and a digit.
@@ -81,7 +82,7 @@
                 if((preg_match("/^[a-zA-Z ]*$/", $_first_name)) && (preg_match("/^[a-zA-Z ]*$/", $_last_name)) &&
                  (filter_var($_email, FILTER_VALIDATE_EMAIL)) && (preg_match("/^[0-9]{14}+$/", $_phone)) && 
                  (preg_match("/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/", $_password))){
-
+ 
                     // Generate random activation token
                     $token = md5(rand().time());
 
@@ -98,13 +99,16 @@
                     
                     if(!$sqlQuery){
                         die("MySQL query failed!" . mysqli_error($connection));
+                        alert(mysqli_error($connection));
                     } 
 
-                    Send verification email
+                    //Send verification email
                     if($sqlQuery) {
-                        $msg = 'Click on the activation link to verify your email. <br><br>
+                      /*  $msg = 'Click on the activation link to verify your email. <br><br>
                           <a href="http://get-vaccinated.uk/user_verificaiton.php?token='.$token.'"> Click here to verify email</a>
-                        ';
+                          '; */
+                          alert("Success!");
+                        
 
                         // Create the Transport
                         $transport = (new Swift_SmtpTransport('smtp.ionos.co.uk', 587, 'tls'))

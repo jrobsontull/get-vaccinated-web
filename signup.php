@@ -1,4 +1,4 @@
-<!-- <?php include('./controllers/register.php'); ?> -->
+<?php include('./controllers/register.php'); ?>
 
 <!doctype html>
 <html lang="en">

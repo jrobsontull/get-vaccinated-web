@@ -5,6 +5,7 @@
 body {
   font-weight: 400;
   background-color: #EEEFF4;
+  height: 100%;
 }
 
 body,
@@ -13,6 +14,8 @@ html,
 .vertical-center {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar {
