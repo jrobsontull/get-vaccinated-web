@@ -113,7 +113,7 @@
 			<?php echo $email_verify_success; ?>
 		</div>
 	</div>
-
+	<!--
 	<div id="login">
 		<form id="sign-in">
 			<div class="center-row-item"><h3>Log in</h3></div>
@@ -133,7 +133,7 @@
 			</div>
 		</form>
 		<div class="center-row-item form-row"><p>Back to <span class="login-txt" onclick="backToRegister()">registration</span></p></div>
-	</div>
+	</div>-->
 
 </div>
 
