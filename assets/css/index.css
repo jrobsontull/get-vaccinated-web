@@ -1,4 +1,4 @@
-/* Import Fonts */
+/* Import Fonts
 @font-face {
   font-family: roboto;
   src: url(../fonts/roboto.ttf);
@@ -7,34 +7,76 @@
 @font-face {
   font-family: poppins;
   src: url(../fonts/poppins.ttf);
+}*/
+
+body,
+html,
+.App,
+.container-div {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
 	background-color: #dcdde1;
 }
 
-h1 {
-	font-family: 'poppins', sans-serif;
+/* */
+.vertical-center {
+	display: flex;
+ 	justify-content: center;
+ 	flex-direction: column;
 }
 
-#short-description {
-	font-family: 'roboto', sans-serif;
+.center-row-item {
+	display: flex;
+	justify-content: center;
+}
+
+.intro-text {
+	margin: 50px auto 50px auto;
+}
+
+div.central-panel {
+	background-color: #f5f6fa;
+	width: 50%;
+	max-width: 700px;
+	min-width: 450px; 
+	margin: 0 auto;
+	padding: 50px;
+	border-radius: 10px;
 }
 
 #register-further, #login {
 	display: none;
 }
 
-.container {
-	background-color: #f5f6fa;
-	width: 40%;
-	max-width: 600px;
+div.form-row {
+	margin: 10px 0;
+}
+
+div.form-row p {
+	margin-block-end: 0;
+}
+
+button.btn-block {
+	width: 50%;
+	min-width: 200px;
 }
 
 .login-txt {
 	font-weight: bold;
+	transition: color 0.3s ease;
 }
 
 .login-txt:hover {
 	cursor: pointer;
+	color: #8995a1;
+}
+
+/* Smaller screens */
+@media only screen and (max-width: 800px) {
+
 }
