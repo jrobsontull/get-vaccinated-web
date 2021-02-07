@@ -78,18 +78,16 @@
                 if((preg_match("/^[a-zA-Z ]*$/", $_first_name)) && (preg_match("/^[a-zA-Z ]*$/", $_last_name)) &&
                  (filter_var($_email, FILTER_VALIDATE_EMAIL)) && (preg_match("/^[0-9]{12}+$/", $_phone)) && 
                  (preg_match("/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/", $_password))){
- 
                     // Generate random activation token
                     $token = md5(rand().time());
 
                     // Password hash
                     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-
-                    // Query
-                    $sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthdate, token, is_active,
-                    date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$phone}', '{$password_hash}', {$birthDate},
+//SOMETHING WEIRD WITH EMAIL
+                    // Query 
+                   $sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
+                    date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$phone}', '{$password_hash}', '{$birthDate}',
                     '{$token}', '0', now())";
-                    
                     // Create mysql query
                     $sqlQuery = mysqli_query($connection, $sql);
                     
@@ -98,9 +96,19 @@
                     } 
                     if($sqlQuery) {
                         $success_msg = 'Click on the activation link to verify your email. <br><br>
-                          <a href="http://get-vaccinated.uk/dom8603/user_verificaiton.php?token='.$token.'"> Click here to verify email</a>
+                          <a href="http://get-vaccinated.uk/dom8063/user_verificaiton.php?token='.$token.'"> Click here to verify email</a>
                         ';
             }
+            // prepare and bind
+/*
+if ($insert_stmt = $connection->prepare("INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
+                    date_time) VALUES ('{$firstName}', '{$lastName}', ?, '{$address}', '{$phone}', '{$password_hash}', {$birthDate},
+                    '{$token}', '0', now())")){
+    $insert_stmt->bind_param("s", $_POST['email']);
+    $insert_stmt->execute();
+    echo "end";
+} */
+
         } else {
             if(empty($firstName)){
                 $fNameEmptyErr = '<div class="alert alert-danger">

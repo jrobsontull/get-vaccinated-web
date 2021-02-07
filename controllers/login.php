@@ -38,11 +38,12 @@
                 // Fetch user data and store in php session
                 while($row = mysqli_fetch_array($query)) {
                     $id            = $row['id'];
-                    $firstname     = $row['firstname'];
-                    $lastname      = $row['lastname'];
+                    $firstname     = $row['firstName'];
+                    $lastname      = $row['lastName'];
                     $email         = $row['email'];
-                    $mobilenumber   = $row['mobilenumber'];
-                    $pass_word     = $row['password'];
+                    $address       = $row['address'];
+                    $phone         = $row['phone'];
+                    $pass_word      = $row['password'];
                     $token         = $row['token'];
                     $is_active     = $row['is_active'];
                 }
@@ -53,11 +54,13 @@
                 // Allow only verified user
                 if($is_active == '1') {
                     if($email_signin == $email && $password_signin == $password) {
-                       header("Location: ./dashboard.php");
-                       
+                     header("Location: ./dashboard.php");
+                       echo("<div class='alert alert-danger'>
+                        SUCCESSFULLY LOGGED IN!
+                    </div>!");
                        $_SESSION['id'] = $id;
-                       $_SESSION['firstname'] = $firstname;
-                       $_SESSION['lastname'] = $lastname;
+                       $_SESSION['firstName'] = $firstname;
+                       $_SESSION['lastName'] = $lastname;
                        $_SESSION['email'] = $email;
                        $_SESSION['address'] = $address;
                        $_SESSION['phone'] = $phone;

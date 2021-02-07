@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>PHP User Registration & Login System Demo</title>
+    <title>Registration and Login</title>
     <!-- jQuery + Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
@@ -15,7 +15,7 @@
 <body>
 
     <!-- Header -->
-    <?php include('../php-user-authentication/header.php'); ?>
+    <?php include('./header.php'); ?>
 
     <!-- Login script -->
     <?php include('./controllers/login.php'); ?>
