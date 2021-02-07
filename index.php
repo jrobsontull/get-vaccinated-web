@@ -45,14 +45,14 @@
 			<div id="register-intial" class="">
 				<div class="form-row">
 					<label class="">Email address</label>
-					<input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp">
+					<input type="email" class="form-control" aria-describedby="emailHelp" name="email-first-page">
 					<?php echo $_emailErr; ?>
 					<?php echo $emailEmptyErr; ?>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="form-row">
 					<label class="">Password</label>
-		    		<input type="password" name="password" class="form-control col-6" id="password" aria-describedby="passwordHelpBlock">
+		    		<input type="password" class="form-control col-6" id="password" aria-describedby="passwordHelpBlock" name="password-first-page">
 		    		<div id="passwordHelpBlock" class="form-text">
 		    			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 		    		</div>
@@ -64,6 +64,9 @@
 				</div>
 			</div>
 			<div id="register-further">
+				<input type="hidden" id="email" name="email-hidden">
+				<input type="hidden" id="password" name="password-hidden">
+
 				<div class="form-row">
 					<label class="">First name</label>
 					<input type="text" name="firstName" class="form-control" id="firstName">
