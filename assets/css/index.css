@@ -21,7 +21,7 @@ h1 {
 	font-family: 'roboto', sans-serif;
 }
 
-#register-further, .login {
+#register-further, #login {
 	display: none;
 }
 
@@ -29,4 +29,12 @@ h1 {
 	background-color: #f5f6fa;
 	width: 40%;
 	max-width: 600px;
+}
+
+.to-register span.login-txt {
+	font-weight: bold;
+}
+
+.to-register span.login-txt:hover {
+	cursor: pointer;
 }

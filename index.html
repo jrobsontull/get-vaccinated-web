@@ -21,7 +21,7 @@
 	</div>
 
 	<div class="container">
-		<div class="registration">
+		<div id="registration">
 			<form id="registration">
 				<h3>Registration</h3>
 				<div id="register-intial">
@@ -34,7 +34,7 @@
 						<label class="">Password</label>
 			    		<input type="password" class="" id="password">
 					</div>
-					<button onclick="nextDetails();">Next</button>
+					<button type="button" onclick="nextRegisterDetails()">Next</button>
 				</div>
 				<div id="register-further">
 					<div>
@@ -64,11 +64,11 @@
 				</div>
 			</form>
 			<div class="to-register">
-				<p>Already registered? Sign in here.</p>
+				<p>Already registered? Sign in <span class="login-txt" onclick="loginPage()">here</span>.</p>
 			</div>
 		</div>
 
-		<div class="login">
+		<div id="login">
 			<form id="sign-in">
 				<div>
 					<label class="">Email address</label>
