@@ -4,6 +4,9 @@ function nextRegisterDetails() {
 	$('#register-intial').fadeOut(function() {
 		$('#register-further').fadeIn();
 	});
+	// Move previous input data to next page
+	$('input[name="email-hidden"]').attr('value', $('input[name="email-first-page"]').val());
+	$('input[name="password-hidden"]').attr('value', $('input[name="password-first-page"]').val());
 }
 
 function loginPage() {
