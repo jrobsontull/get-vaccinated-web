@@ -49,9 +49,9 @@ div.central-panel {
 	border-radius: 10px;
 }
 /*
-#register-further, #login {
+#register-further,*/ #login {
 	display: none;
-}*/
+}
 
 div.form-row {
 	margin: 10px 0;
