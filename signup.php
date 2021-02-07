@@ -52,7 +52,6 @@
                         <?php echo $_emailErr; ?>
                         <?php echo $emailEmptyErr; ?>
                     </div>
-<!-- need to add support for below-->
                     <div class="form-group">
                         <label>Address</label>
                         <input type="text" class="form-control" name="address" id="address" />
@@ -63,7 +62,7 @@
 
                     <div class="form-group">
                         <label>Phone</label>
-                        <input type="text" class="form-control" name="phone" id="Phone" />
+                        <input type="text" class="form-control" name="phone" id="phone" />
 
                         <?php echo $_mobileErr; ?>
                         <?php echo $mobileEmptyErr; ?>
@@ -82,8 +81,8 @@
                         <label>Birthdate</label>
                         <input type="date" class="form-control" name="birthDate" id="birthDate" />
 
-                        <?php echo $_birthDate; ?>
-                        <?php echo $birthDate; ?>
+                        <?php echo $_birthDateErr; ?>
+                        <?php echo $birthDateEmptyErr; ?>
                     </div>
 
                     <button type="submit" name="submit" id="submit" class="btn btn-outline-primary btn-lg btn-block">Sign up
