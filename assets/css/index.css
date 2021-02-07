@@ -1,0 +1,32 @@
+/* Import Fonts */
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/roboto.ttf);
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(../fonts/poppins.ttf);
+}
+
+body {
+	background-color: #dcdde1;
+}
+
+h1 {
+	font-family: 'poppins', sans-serif;
+}
+
+#short-description {
+	font-family: 'roboto', sans-serif;
+}
+
+#register-further, .login {
+	display: none;
+}
+
+.container {
+	background-color: #f5f6fa;
+	width: 40%;
+	max-width: 600px;
+}
