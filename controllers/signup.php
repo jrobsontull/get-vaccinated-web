@@ -1,4 +1,9 @@
 <?php
+
+	// Error & success messages
+	global $success_msg, $email_exist, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr, $_addressErr, $birthDateErr;
+	global $fNameEmptyErr, $lNameEmptyErr, $emailEmptyErr, $mobileEmptyErr, $passwordEmptyErr, $birthDateEmptyErr, $addressEmptyErr, $email_verify_err, $email_verify_success;
+
 	// Set empty form vars for validation mapping
     $_first_name = $_last_name = $_email = $_mobile = $_password = $_address = $_birth_date =  "";
 
@@ -60,7 +65,7 @@
 
 				// Query 
 				$sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
-                    date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$phone}', '{$password_hash}', '{$birthDate}', '{$token}', '0', now())";
+                    date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$mobile}', '{$password_hash}', '{$birthDate}', '{$token}', '0', now())";
 				// Create mysql query
 				$sqlQuery = mysqli_query($usersdb, $sql);
                     
@@ -85,7 +90,7 @@
 		if(empty($address)){
 			$addressEmptyErr = '<div class="alert alert-danger">Address can not be blank.</div>';
 		}            
-		if(empty($phone)){
+		if(empty($mobile)){
 			$mobileEmptyErr = '<div class="alert alert-danger">Mobile number can not be blank.</div>';
 		}
 		if(empty($password)){

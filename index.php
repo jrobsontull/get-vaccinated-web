@@ -48,6 +48,8 @@
 				<div class="form-row">
 					<label class="">Email address</label>
 					<input type="email" name="email" class="form-control" aria-describedby="emailHelp">
+					<?php echo $_emailErr; ?>
+					<?php echo $emailEmptyErr; ?>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="form-row">
@@ -56,6 +58,8 @@
 		    		<div id="passwordHelpBlock" class="form-text">
 		    			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 		    		</div>
+		    		<?php echo $_passwordErr; ?>
+					<?php echo $passwordEmptyErr; ?>
 				</div>
 				<div class="center-row-item form-row">
 					<button type="button" class="btn btn-outline-primary btn-block" onclick="nextRegisterDetails()">Next</button>
@@ -65,22 +69,32 @@
 				<div class="form-row">
 					<label class="">First name</label>
 					<input type="text" name="firstName" class="form-control" id="first-name">
+					<?php echo $fNameEmptyErr; ?>
+					<?php echo $f_NameErr; ?>
 				</div>
 				<div class="form-row">
 					<label class="">Last name</label>
 					<input type="text" name="secondName" class="form-control" id="last-name">
+					<?php echo $l_NameErr; ?>
+					<?php echo $lNameEmptyErr; ?>
 				</div>
 				<div class="form-row">
 					<label class="">Address</label>
 					<input type="text" name="address" class="form-control" id="address">
+					<?php echo $_addressErr; ?>
+					<?php echo $addressEmptyErr; ?>
 				</div>
 				<div class="form-row">
 					<label class="">Mobile</label>
 					<input type="tel" name="mobile" class="form-control" id="mobile">
+					<?php echo $_mobileErr; ?>
+					<?php echo $mobileEmptyErr; ?>
 				</div>
 				<div class="form-row">
 					<label class="">Birth date</label>
 					<input type="date" name="dob" class="form-control" id="birth-date">
+					<?php echo $_birthDateErr; ?>
+					<?php echo $birthDateEmptyErr; ?>
 				</div>
 				<div class="form-row">
 			    	<div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
@@ -92,6 +106,11 @@
 		</form>
 		<div class="center-row-item form-row">
 			<p>Already registered? Sign in <span class="login-txt" onclick="loginPage()">here</span></p>
+			<?php echo $success_msg; ?>
+			<?php echo $email_exist; ?>
+
+			<?php echo $email_verify_err; ?>
+			<?php echo $email_verify_success; ?>
 		</div>
 	</div>
 
