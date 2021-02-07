@@ -24,11 +24,7 @@
                 <form action="" method="post">
                     <h3>Register</h3>
 
-                    <?php echo $success_msg; ?>
-                    <?php echo $email_exist; ?>
-
-                    <?php echo $email_verify_err; ?>
-                    <?php echo $email_verify_success; ?>
+                   
 
                     <div class="form-group">
                         <label>First name</label>
@@ -84,6 +80,12 @@
                         <?php echo $_birthDateErr; ?>
                         <?php echo $birthDateEmptyErr; ?>
                     </div>
+
+                     <?php echo $success_msg; ?>
+                    <?php echo $email_exist; ?>
+
+                    <?php echo $email_verify_err; ?>
+                    <?php echo $email_verify_success; ?>
 
                     <button type="submit" name="submit" id="submit" class="btn btn-outline-primary btn-lg btn-block">Sign up
                     </button>
