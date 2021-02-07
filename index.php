@@ -1,6 +1,4 @@
-<?php include('config/usersdb.php'); ?>
 <?php include('controllers/signup.php'); ?>
-<?php include('controllers/signin.php'); ?>
 
 <!doctype html>
 <html lang="en">
@@ -47,14 +45,14 @@
 			<div id="register-intial" class="">
 				<div class="form-row">
 					<label class="">Email address</label>
-					<input type="email" name="email" class="form-control" aria-describedby="emailHelp">
+					<input type="email" name="email" id="email" class="form-control" aria-describedby="emailHelp">
 					<?php echo $_emailErr; ?>
 					<?php echo $emailEmptyErr; ?>
 					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
 				<div class="form-row">
 					<label class="">Password</label>
-		    		<input type="password" name="password" class="form-control col-6" id="passBox" aria-describedby="passwordHelpBlock">
+		    		<input type="password" name="password" class="form-control col-6" id="password" aria-describedby="passwordHelpBlock">
 		    		<div id="passwordHelpBlock" class="form-text">
 		    			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 		    		</div>
@@ -68,13 +66,13 @@
 			<div id="register-further">
 				<div class="form-row">
 					<label class="">First name</label>
-					<input type="text" name="firstName" class="form-control" id="first-name">
+					<input type="text" name="firstName" class="form-control" id="firstName">
 					<?php echo $fNameEmptyErr; ?>
 					<?php echo $f_NameErr; ?>
 				</div>
 				<div class="form-row">
 					<label class="">Last name</label>
-					<input type="text" name="secondName" class="form-control" id="last-name">
+					<input type="text" name="lastName" class="form-control" id="lastName">
 					<?php echo $l_NameErr; ?>
 					<?php echo $lNameEmptyErr; ?>
 				</div>
@@ -92,7 +90,7 @@
 				</div>
 				<div class="form-row">
 					<label class="">Birth date</label>
-					<input type="date" name="dob" class="form-control" id="birth-date">
+					<input type="date" name="dob" class="form-control" id="dob">
 					<?php echo $_birthDateErr; ?>
 					<?php echo $birthDateEmptyErr; ?>
 				</div>
@@ -100,7 +98,7 @@
 			    	<div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 				</div>
 				<div class="center-row-item form-row">
-					<button type="submit" name="register" class="btn btn-outline-primary btn-block">Register</button>
+					<button type="submit" name="submit" id="submit" class="btn btn-outline-primary btn-block">Register</button>
 				</div>
 			</div>
 		</form>
@@ -108,7 +106,6 @@
 			<p>Already registered? Sign in <span class="login-txt" onclick="loginPage()">here</span></p>
 			<?php echo $success_msg; ?>
 			<?php echo $email_exist; ?>
-
 			<?php echo $email_verify_err; ?>
 			<?php echo $email_verify_success; ?>
 		</div>
