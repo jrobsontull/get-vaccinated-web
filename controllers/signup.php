@@ -1,8 +1,4 @@
 <?php
-	// Error & success messages
-	global $success_msg, $email_exist, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr, $_addressErr, $birthDateErr;
-	global $fNameEmptyErr, $lNameEmptyErr, $emailEmptyErr, $mobileEmptyErr, $passwordEmptyErr, $birthDateEmptyErr, $addressEmptyErr, $email_verify_err, $email_verify_success;
-
 	// Set empty form vars for validation mapping
     $_first_name = $_last_name = $_email = $_mobile = $_password = $_address = $_birth_date =  "";
 
@@ -25,9 +21,7 @@
     	// Check if user already registered
 		if($rowCount > 0) {
 			$email_exist = '
-				<div class="alert alert-danger" role="alert">
-					User with this email address already exists!
-				</div>
+				<div class="alert alert-danger" role="alert">User with this email address already exists!</div>
             ';
         } else {
         	// clean the form data before sending to database

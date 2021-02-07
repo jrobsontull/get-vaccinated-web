@@ -1,6 +1,6 @@
+<?php include('config/usersdb.php'); ?>
 <?php include('controllers/signup.php'); ?>
 <?php include('controllers/signin.php'); ?>
-<?php include('config/usersdb.php'); ?>
 
 <!doctype html>
 <html lang="en">
