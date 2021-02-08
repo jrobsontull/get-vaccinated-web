@@ -35,40 +35,7 @@
                     </div>
                 ';
             } else {
-                // clean the form data before sending to database
-                $_first_name = mysqli_real_escape_string($usersdb, $firstName);
-                $_last_name = mysqli_real_escape_string($usersdb, $lastName);
-                $_email = mysqli_real_escape_string($usersdb, $email);
-                $_address = mysqli_real_escape_string($usersdb, $address);
-                $_phone = mysqli_real_escape_string($usersdb, $phone);
-                $_password = mysqli_real_escape_string($usersdb, $password);
-                $_birth_date = mysqli_real_escape_string($usersdb, $birthDate);
 
-                if(!preg_match("/^[a-zA-Z ]*$/", $_first_name)) {
-                    $f_NameErr = '<div class="alert alert-danger">
-                            Only letters and white space allowed.
-                        </div>';
-                }
-                if(!preg_match("/^[a-zA-Z ]*$/", $_last_name)) {
-                    $l_NameErr = '<div class="alert alert-danger">
-                            Only letters and white space allowed.
-                        </div>';
-                }
-                if(!filter_var($_email, FILTER_VALIDATE_EMAIL)) {
-                    $_emailErr = '<div class="alert alert-danger">
-                            Email format is invalid.
-                        </div>';
-                }
-                if(!preg_match("/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{6,20}$/", $_password)) {
-                    $_passwordErr = '<div class="alert alert-danger">
-                             Password should be between 6 to 20 charcters long, contains atleast one special chacter, lowercase, uppercase and a digit.
-                        </div>';
-                }
-                
-                // Store the data in db, if all the preg_match condition met
-                if((preg_match("/^[a-zA-Z ]*$/", $_first_name)) && (preg_match("/^[a-zA-Z ]*$/", $_last_name)) &&
-                 (filter_var($_email, FILTER_VALIDATE_EMAIL)) &&
-                 (preg_match("/^(?=.*\d)(?=.*[@#\-_$%^&+=§!\?])(?=.*[a-z])(?=.*[A-Z])[0-9A-Za-z@#\-_$%^&+=§!\?]{8,20}$/", $_password))){
                     // Generate random activation token
                     $token = md5(rand().time());
 
@@ -89,44 +56,7 @@
                           <a href="http://get-vaccinated.uk/dom8063/user_verificaiton.php?token='.$token.'"> Click here to verify email</a>
                         ';
             }
-        } else {
-            if(empty($firstName)){
-                $fNameEmptyErr = '<div class="alert alert-danger">
-                    First name can not be blank.
-                </div>';
-            }
-            if(empty($lastName)){
-                $lNameEmptyErr = '<div class="alert alert-danger">
-                    Last name can not be blank.
-                </div>';
-            }
-            if(empty($email)){
-                $emailEmptyErr = '<div class="alert alert-danger">
-                    Email can not be blank.
-                </div>';
-            }
-            if(empty($address)){
-                $addressEmptyErr = '<div class="alert alert-danger">
-                    Address can not be blank.
-                </div>';
-            }            
-            if(empty($phone)){
-                $mobileEmptyErr = '<div class="alert alert-danger">
-                    Mobile number can not be blank.
-                </div>';
-            }
-            if(empty($password)){
-                $passwordEmptyErr = '<div class="alert alert-danger">
-                    Password can not be blank.
-                </div>';
-            }
-            if(empty($birthDate)){
-                $birthDateEmptyErr = '<div class="alert alert-danger">
-                    Birth date can not be blank.
-                </div>';
-            }
-        }
-    }
+        } 
 }
 }
 ?>
