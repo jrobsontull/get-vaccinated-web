@@ -53,7 +53,7 @@
                     } 
                     if($sqlQuery) {
                         $success_msg = 'Click on the activation link to verify your email. <br><br>
-                          <a href="http://get-vaccinated.uk/dom8063/user_verificaiton.php?token='.$token.'"> Click here to verify email</a>
+                          <a href="./user_verificaiton.php?token='.$token.'"> Click here to verify email</a>
                         ';
             }
         } 
