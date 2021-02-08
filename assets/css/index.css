@@ -19,15 +19,12 @@ html,
   padding: 0;
 }
 
-body {
-	background-color: #dcdde1;
-}
-
-/* */
+/* General classes */
 .vertical-center {
 	display: flex;
  	justify-content: center;
  	flex-direction: column;
+ 	background-color: #f5f6fa;
 }
 
 .center-row-item {
@@ -35,18 +32,79 @@ body {
 	justify-content: center;
 }
 
+/* Intro */
 .intro-text {
-	margin: 50px auto 50px auto;
+	margin: 50px auto 30px auto;
+	width: 50%;
+	max-width: 700px;
+	min-width: 450px;
 }
 
-div.central-panel {
+#intro-header {
+	border-radius: 10px 10px 0 0;
+	padding: 20px 20px 30px 20px;
+	background-color: #353b48;
+	margin-bottom: -10px;
+}
+
+#intro-header h1, #intro-header p {
+	color: white;
+}
+
+#intro-header p {
+	margin-bottom: 0px;
+}
+
+#explanation {
+	border-radius: 10px;
+	border: 2px solid #353b48;
+	padding: 20px;
 	background-color: #f5f6fa;
+}
+
+.intro-text h4 {
+	margin-bottom: 18px;
+}
+
+.intro-text ol {
+	list-style: none;
+	counter-rest: item;
+	padding-left: 0;
+	list-style-position: outside;
+	margin-left: 2em;
+}
+
+.intro-text ol li {
+	counter-increment: item;
+	margin-bottom: 10px;
+	list-style-position: outside;
+}
+
+.intro-text ol li:before{
+	margin-right: 10px;
+	content: counter(item);
+	background: #7f8fa6;
+	border-radius: 100%;
+	color: white;
+	width: 2em;
+	height: 2em;
+	text-align: center;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 2em;
+	margin-left: -2.5em;
+}
+
+/* Login panel */
+div.central-panel {
+	background-color: #fff;
 	width: 50%;
 	max-width: 700px;
 	min-width: 450px; 
 	margin: 0 auto;
-	padding: 50px;
+	padding: 40px;
 	border-radius: 10px;
+	box-shadow: 0 0 12px #e8e8e8;
 }
 
 #register-further, #login {
@@ -64,6 +122,7 @@ div.form-row p {
 button.btn-block {
 	width: 50%;
 	min-width: 200px;
+	margin-top: 12px;
 }
 
 .login-txt {

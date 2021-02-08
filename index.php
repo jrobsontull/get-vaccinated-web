@@ -24,14 +24,16 @@
 <div class="vertical-center">
 
 <div class="intro-text">
-	<h1>Get vaccinated</h1>
-	<p id="short-description">as quickly as possible by filling in for cancelled appoitments or spare doses. Register now. Save lives.</p>
+	<div id="intro-header">
+		<h1>Get. Vaccinated. Now.</h1>
+		<p id="short-description">We provide a service for you to fill in for cancelled appointments or make use of surplus vaccine. Register now. Save lives.</p>
+	</div>
 	<div id="explanation">
-		<h3>How it works</h3>
+		<h4>How it works</h4>
 		<ol>
-			<li>Some content here.</li>
-			<li>Some content here.</li>
-			<li>Some content here.</li>
+			<li>Register for an account with us.</li>
+			<li>Select your local vaccine centre.</li>
+			<li>We'll notify you by email or mobile when there is vaccine availble by short notice.</li>
 		</ol>
 	</div>
 </div>
