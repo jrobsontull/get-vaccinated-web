@@ -1,14 +1,3 @@
-/* Import Fonts
-@font-face {
-  font-family: roboto;
-  src: url(../fonts/roboto.ttf);
-}
-
-@font-face {
-  font-family: poppins;
-  src: url(../fonts/poppins.ttf);
-}*/
-
 body,
 html,
 .App,
@@ -42,7 +31,7 @@ html,
 
 #intro-header {
 	border-radius: 10px 10px 0 0;
-	padding: 20px 20px 30px 20px;
+	padding: 20px 40px 30px 40px;
 	background-color: #353b48;
 	margin-bottom: -10px;
 }
@@ -58,7 +47,7 @@ html,
 #explanation {
 	border-radius: 10px;
 	border: 2px solid #353b48;
-	padding: 20px;
+	padding: 20px 40px 16px 40px;
 	background-color: #f5f6fa;
 }
 
@@ -80,10 +69,10 @@ html,
 	list-style-position: outside;
 }
 
-.intro-text ol li:before{
+.intro-text ol li:before {
 	margin-right: 10px;
 	content: counter(item);
-	background: #7f8fa6;
+	background: #718093;
 	border-radius: 100%;
 	color: white;
 	width: 2em;
@@ -93,6 +82,11 @@ html,
 	font-size: 20px;
 	line-height: 2em;
 	margin-left: -2.5em;
+	transition: background 0.5s ease;
+}
+
+.intro-text ol li:hover:before {
+	background: #7f8fa6;
 }
 
 /* Login panel */
