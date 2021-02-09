@@ -36,16 +36,24 @@ function validateLostFocus(element) {
 function validateEmail(element) {
     var emailInput = $(element);
     var email = emailInput.val();
+    
+    // Check if message already and remove
+	if (emailInput.next().hasClass("invalid-feedback") || emailInput.next().hasClass("valid-feedback")) {
+		emailInput.next().remove();
+	}
+
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     result = re.test(String(email).toLowerCase());
 
     var emailInput = $(element);
     if (!result) {
 		emailInput.addClass("is-invalid");
+		emailInput.after("<div class=\"invalid-feedback\">This is not a valid email.</div>");
 		return false;
 	} else {
 		emailInput.removeClass("is-invalid");
 		emailInput.addClass("is-valid");
+		emailInput.after("<div class=\"valid-feedback\">Looks good!</div>");
 		return true;
 	}
 }
@@ -54,8 +62,15 @@ function validatePass(element) {
 	// To change html
 	var passInput = $(element);
 	var pass = passInput.val();
+
+	// Check if message already and remove
+	if (passInput.next().hasClass("invalid-feedback") || passInput.next().hasClass("valid-feedback")) {
+		passInput.next().remove();
+	}
+
 	function invalidPass(message) {
 		passInput.addClass("is-invalid");
+		passInput.after("<div class=\"invalid-feedback\">" + message + "</div>");
 	}
 	// Pass checking
 	if (pass == "") {
@@ -93,5 +108,7 @@ function validatePass(element) {
 
 	passInput.removeClass("is-invalid");
 	passInput.addClass("is-valid");
+	passInput.after("<div class=\"valid-feedback\">Looks good!</div>");
+
 	return true;
 }
