@@ -2,19 +2,23 @@
 
 <!doctype html>
 <html lang="en">
-
 <head>
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>User Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- jQuery + Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <link href="assets/css/index.css" rel="stylesheet">
+    <link href="assets/css/footer.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    
+    <title>Verification</title>
 </head>
-
 <body>
 
     <div class="container">

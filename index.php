@@ -45,16 +45,16 @@
 				<h3>Sign up</h3>
 			</div>
 			<div id="register-intial" class="">
-				<div class="form-row">
-					<label class="">Email address</label>
-					<input type="email" class="form-control" aria-describedby="emailHelp" name="email-first-page">
+				<div class="form-row form-floating">
+					<input type="email" class="form-control" aria-describedby="emailHelp" name="email-first-page" id="floatingEmail" placeholder="name@example.com" onblur="validateLostFocus(this)">
+					<label for="floatingEmail">Email address</label>
+					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 					<?php echo $_emailErr; ?>
 					<?php echo $emailEmptyErr; ?>
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				</div>
-				<div class="form-row">
-					<label class="">Password</label>
-		    		<input type="password" class="form-control col-6" id="password" aria-describedby="passwordHelpBlock" name="password-first-page">
+				<div class="form-row form-floating">
+		    		<input type="password" class="form-control col-6" id="floatingPass" aria-describedby="passwordHelpBlock" name="password-first-page" placeholder="Password" onblur="validateLostFocus(this)">
+		    		<label for="floatingPass">Password</label>
 		    		<div id="passwordHelpBlock" class="form-text">
 		    			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
 		    		</div>
