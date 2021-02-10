@@ -1,6 +1,6 @@
 <?php
     // Database usersdb
-    include('config/usersdb.php');
+    include('../config/usersdb.php');
     
     // Error & success messages
     global $success_msg, $email_exist, $f_NameErr, $l_NameErr, $_emailErr, $_mobileErr, $_passwordErr, $_addressErr, $birthDateErr;
@@ -9,7 +9,7 @@
     // Set empty form vars for validation mapping
     $_first_name = $_last_name = $_email = $_phone = $_password = $_address = $_birth_date =  "";
 
-    if(isset($_POST["submit"])) {
+    if(isset($_POST["register"])) {
         $firstName     = $_POST["firstName"];
         $lastName      = $_POST["lastName"];
         $email         = $_POST["email-hidden"];
@@ -42,14 +42,14 @@
                     // Password hash
                     $password_hash = password_hash($password, PASSWORD_BCRYPT);
                     // Query 
-                   $sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
+                    $sql = "INSERT INTO users (firstName, lastName, email, address, phone, password, birthDate, token, is_active,
                     date_time) VALUES ('{$firstName}', '{$lastName}', '{$email}', '{$address}', '{$phone}', '{$password_hash}', '{$birthDate}',
                     '{$token}', '0', now())";
                     // Create mysql query
                     $sqlQuery = mysqli_query($usersdb, $sql);
                     
                     if(!$sqlQuery){
-                        die("MySQL query failed!" . mysqli_error($usersdb));
+                        die("MySQL query failed!" . $sql . mysqli_error($usersdb));
                     } 
                     if($sqlQuery) {
                         $success_msg = 'Click on the activation link to verify your email. <br><br>

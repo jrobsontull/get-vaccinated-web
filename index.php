@@ -1,5 +1,3 @@
-<?php include('controllers/signup.php'); ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -40,7 +38,7 @@
 
 <div class="central-panel">
 	<div id="register-div">
-		<form id="registration" method="post" action="">
+		<form id="registration" method="post" action="controllers/signup.php">
 			<div class="center-row-item">
 				<h3>Sign up</h3>
 			</div>
@@ -103,7 +101,7 @@
 			    	<div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 				</div>
 				<div class="center-row-item form-row">
-					<button type="submit" name="submit" id="submit" class="btn btn-outline-primary btn-block">Register</button>
+					<button type="submit" name="register" class="btn btn-outline-primary btn-block">Register</button>
 				</div>
 			</div>
 		</form>
@@ -115,9 +113,8 @@
 			<?php echo $email_verify_success; ?>
 		</div>
 	</div>
-	<!--
 	<div id="login">
-		<form id="sign-in">
+		<form id="sign-in" method="post" action="controllers/signin.php">
 			<div class="center-row-item"><h3>Log in</h3></div>
 			<div class="form-row">
 				<label class="">Email address</label>
@@ -135,7 +132,7 @@
 			</div>
 		</form>
 		<div class="center-row-item form-row"><p>Back to <span class="login-txt" onclick="backToRegister()">registration</span></p></div>
-	</div>-->
+	</div>
 
 </div>
 
