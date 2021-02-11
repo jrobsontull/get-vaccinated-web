@@ -105,7 +105,7 @@ div.central-panel {
 	box-shadow: 0 0 12px #e8e8e8;
 }
 
-#register-further, #login {
+#register-2, #register-3, #login {
 	display: none;
 }
 
@@ -119,8 +119,13 @@ div.form-row p {
 
 button.btn-block {
 	width: 50%;
-	min-width: 200px;
 	margin-top: 12px;
+	margin-right: 10px;
+	max-width: 200px;
+}
+
+button.btn-block:last-child {
+	margin-right: 0; 
 }
 
 .login-txt {

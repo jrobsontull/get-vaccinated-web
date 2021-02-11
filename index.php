@@ -42,7 +42,7 @@
 			<div class="center-row-item">
 				<h3>Sign up</h3>
 			</div>
-			<div id="register-intial" class="">
+			<div id="register-1">
 				<div class="form-row form-floating">
 					<input type="email" class="form-control" aria-describedby="emailHelp" name="email-first-page" id="floatingEmail" placeholder="name@example.com" onblur="validateLostFocus(this)">
 					<label for="floatingEmail">Email address</label>
@@ -63,19 +63,16 @@
 					<button type="button" class="btn btn-outline-primary btn-block" onclick="nextRegisterDetails()">Next</button>
 				</div>
 			</div>
-			<div id="register-further">
-				<input type="hidden" id="email" name="email-hidden">
-				<input type="hidden" id="password" name="password-hidden">
-
+			<div id="register-2">
 				<div class="form-row">
 					<label class="">First name</label>
-					<input type="text" name="firstName" class="form-control" id="firstName">
+					<input type="text" name="first-name" class="form-control" id="firstName">
 					<?php echo $fNameEmptyErr; ?>
 					<?php echo $f_NameErr; ?>
 				</div>
 				<div class="form-row">
 					<label class="">Last name</label>
-					<input type="text" name="lastName" class="form-control" id="lastName">
+					<input type="text" name="last-name" class="form-control" id="lastName">
 					<?php echo $l_NameErr; ?>
 					<?php echo $lNameEmptyErr; ?>
 				</div>
@@ -97,10 +94,30 @@
 					<?php echo $_birthDateErr; ?>
 					<?php echo $birthDateEmptyErr; ?>
 				</div>
+				<div class="center-row-item form-row">
+					<button type="button" class="btn btn-outline-primary btn-block" onclick="prevRegisterDetails()">Previous</button>
+					<button type="button" class="btn btn-outline-primary btn-block" onclick="nextRegisterDetails()">Next</button>
+				</div>
+			</div>
+			<div id="register-3">
+				<!--For POST-->
+				<input type="hidden" name="email-hidden">
+				<input type="hidden" name="password-hidden">
+				<input type="hidden" name="f-name-hidden">
+				<input type="hidden" name="l-name-hidden">
+				<input type="hidden" name="address-hidden">
+				<input type="hidden" name="mobile-hidden">
+				<input type="hidden" name="dob-hidden">
+				<!--Form-->
+				<div class="form-row">
+					<label class="">Choose a vaccination centre</label>
+					<input type="text" name="firstName" class="form-control" id="firstName">
+				</div>
 				<div class="form-row">
 			    	<div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 				</div>
 				<div class="center-row-item form-row">
+					<button type="button" class="btn btn-outline-primary btn-block" onclick="prevRegisterDetails()">Previous</button>
 					<button type="submit" name="register" class="btn btn-outline-primary btn-block">Register</button>
 				</div>
 			</div>

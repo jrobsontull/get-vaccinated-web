@@ -10,13 +10,13 @@
     $_first_name = $_last_name = $_email = $_phone = $_password = $_address = $_birth_date =  "";
 
     if(isset($_POST["register"])) {
-        $firstName     = $_POST["firstName"];
-        $lastName      = $_POST["lastName"];
+        $firstName     = $_POST["f-name-hidden"];
+        $lastName      = $_POST["l-name-hidden"];
         $email         = $_POST["email-hidden"];
-        $address       = $_POST["address"];
-        $phone         = $_POST["mobile"];
+        $address       = $_POST["address-hidden"];
+        $phone         = $_POST["mobile-hidden"];
         $password      = $_POST["password-hidden"];
-        $birthDate     = $_POST["dob"];
+        $birthDate     = $_POST["dob-hidden"];
 
         // check if email already exist
         $email_check_query = mysqli_query($usersdb, "SELECT * FROM users WHERE email = '{$email}' ");
@@ -59,4 +59,7 @@
         } 
 }
 }
+echo $email_exist;
+echo $email_verify_err;
+echo $email_verify_success;
 ?>

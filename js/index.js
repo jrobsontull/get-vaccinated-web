@@ -1,16 +1,4 @@
-function nextRegisterDetails() {
-	// Validate email and password form
-	if (validateEmail($("input[name=\"email-first-page\"]")) && validatePass($("input[name=\"password-first-page\"]"))) {
-		// Animate form
-		$('#register-intial').fadeOut(function() {
-			$('#register-further').fadeIn();
-		});
-		// Move previous input data to next page
-		$('input[name="email-hidden"]').attr('value', $('input[name="email-first-page"]').val());
-		$('input[name="password-hidden"]').attr('value', $('input[name="password-first-page"]').val());
-	}
-}
-
+// Sign in functions
 function loginPage() {
 	$('#register-div').fadeOut(function() {
 		$('#login').fadeIn();
@@ -18,11 +6,54 @@ function loginPage() {
 }
 
 function backToRegister() {
-	$('#register-further').hide();
+	$('#register-2').hide();
 	$('#login').fadeOut(function() {
 		$('#register-div').fadeIn();
-		$('#register-intial').fadeIn();
+		$('#register-1').fadeIn();
 	});
+}
+
+// Register functions
+function nextRegisterDetails() {
+	if ($('#register-1').css('display') == "block") {
+		// Validate
+		if (validateEmail($("input[name=\"email-first-page\"]")) && validatePass($("input[name=\"password-first-page\"]"))) {
+			// Save data to next div
+			$('input[name="email-hidden"]').attr('value', $('input[name="email-first-page"]').val());
+			$('input[name="password-hidden"]').attr('value', $('input[name="password-first-page"]').val());
+			// Naviagte
+			$('#register-1').fadeOut(function() {
+				$('#register-2').fadeIn();
+			});
+		}
+	} else if ($('#register-2').css('display') == "block") {
+		// Do some validation
+		// Save data to next div
+		$('input[name="f-name-hidden"]').attr('value', $('input[name="first-name"]').val());
+		$('input[name="l-name-hidden"]').attr('value', $('input[name="last-name"]').val());
+		$('input[name="address-hidden"]').attr('value', $('input[name="address"]').val());
+		$('input[name="mobile-hidden"]').attr('value', $('input[name="mobile"]').val());
+		$('input[name="dob-hidden"]').attr('value', $('input[name="dob"]').val());
+		// Navigate
+		$('#register-2').fadeOut(function() {
+			$('#register-3').fadeIn();
+		});
+	}
+}
+
+function prevRegisterDetails() {
+	// Do something
+	if ($('#register-2').css('display') == "block") {
+		// Naviagte
+		$('#register-2').fadeOut(function() {
+			$('#register-1').fadeIn();
+		});
+	} else if ($('#register-3').css('display') == "block") {
+		// Naviagte
+		$('#register-3').fadeOut(function() {
+			$('#register-2').fadeIn();
+		});
+	}
 }
 
 function validateLostFocus(element) {
