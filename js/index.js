@@ -72,6 +72,8 @@ function validateLostFocus(element) {
 		validateEmail(element);
 	} else if ($(element).attr('type') == 'password') {
 		validatePass(element);
+	} else if ($(element).attr('name') == 'postcode') {
+		validatePostcode(element);
 	}
 }
 
@@ -163,4 +165,26 @@ function validatePass(element) {
 	passInput.after("<div class=\"valid-feedback\">Looks good!</div>");
 
 	return true;
+}
+
+function validatePostcode(element) {
+	// To change html
+	var pcInput = $(element);
+	var pc = pcInput.val();
+
+	if (pc == "") {
+
+	} else {
+		// Validate
+		var url = "https://api.postcodes.io/postcodes/" + pc + "/validate";
+		$.getJSON(url, function(data) {
+			if (data.result) {
+				pcInput.removeClass("is-invalid");
+				pcInput.addClass("is-valid");
+			} else {
+				pcInput.removeClass("is-valid");
+				pcInput.addClass("is-invalid");
+			}
+		})
+	}
 }

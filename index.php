@@ -110,7 +110,7 @@
 				</div>
 				<div class="form-row no-wrap">
 					<div class="form-col2">
-						<input type="text" class="form-control" name="postcode" aria-describedby="postcode-help">
+						<input type="text" class="form-control" name="postcode" aria-describedby="postcode-help" onblur="validateLostFocus(this)">
 						<div id="postcode-help" class="form-text">
 			    			Postcode
 			    		</div>
