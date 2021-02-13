@@ -65,23 +65,64 @@
 			</div>
 			<div id="register-2">
 				<div class="form-row">
-					<label class="">First name</label>
+					<label>First name</label>
 					<input type="text" name="first-name" class="form-control" id="firstName">
 					<?php echo $fNameEmptyErr; ?>
 					<?php echo $f_NameErr; ?>
 				</div>
 				<div class="form-row">
-					<label class="">Last name</label>
+					<label>Last name</label>
 					<input type="text" name="last-name" class="form-control" id="lastName">
 					<?php echo $l_NameErr; ?>
 					<?php echo $lNameEmptyErr; ?>
 				</div>
+				<div class="form-row form-line-break"></div>
 				<div class="form-row">
 					<label class="">Address</label>
-					<input type="text" name="address" class="form-control" id="address">
+					<input type="text" class="form-control" name="address-l1" aria-describedby="line-1">
+					<div id="line-1" class="form-text">
+		    			Street address
+		    		</div>
 					<?php echo $_addressErr; ?>
 					<?php echo $addressEmptyErr; ?>
 				</div>
+				<div class="form-row">
+					<input type="text" class="form-control" name="address-l2" aria-describedby="line-2">
+					<div id="line-2" class="form-text">
+		    			Apartment, suite , unit, building, floor, etc.
+		    		</div>
+				</div>
+				<div class="form-row no-wrap">
+					<div class="form-col2">
+						<input type="text" class="form-control" name="city" aria-describedby="city-help">
+						<div id="city-help" class="form-text">
+			    			City
+			    		</div>
+		    		</div>
+		    		<div class="form-col2">
+						<select class="form-select" name="county" aria-describedby="county-help">
+							<?php include 'assets/html/counties.php';?>
+						</select>
+						<div id="county-help" class="form-text">
+			    			County
+			    		</div>
+		    		</div>
+				</div>
+				<div class="form-row no-wrap">
+					<div class="form-col2">
+						<input type="text" class="form-control" name="postcode" aria-describedby="postcode-help">
+						<div id="postcode-help" class="form-text">
+			    			Postcode
+			    		</div>
+		    		</div>
+		    		<div class="form-col2">
+						<input type="text" class="form-control" name="country" aria-describedby="country-help">
+						<div id="country-help" class="form-text">
+			    			Country
+			    		</div>
+		    		</div>
+				</div>
+				<div class="form-row form-line-break"></div>
 				<div class="form-row">
 					<label class="">Mobile</label>
 					<input type="tel" name="mobile" class="form-control" id="mobile">

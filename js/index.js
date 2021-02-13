@@ -25,6 +25,9 @@ function nextRegisterDetails() {
 			$('#register-1').fadeOut(function() {
 				$('#register-2').fadeIn();
 			});
+			$('html, body').animate({
+				scrollTop: $(document).height()
+			}, 1000);
 		}
 	} else if ($('#register-2').css('display') == "block") {
 		// Do some validation
@@ -53,6 +56,9 @@ function prevRegisterDetails() {
 		$('#register-3').fadeOut(function() {
 			$('#register-2').fadeIn();
 		});
+		$('html, body').animate({
+			scrollTop: $(document).height()
+		}, 1000);
 	}
 }
 
@@ -68,6 +74,11 @@ function validateEmail(element) {
     var emailInput = $(element);
     var email = emailInput.val();
     
+    // Remove ariadescribedby element
+    if ($('#emailHelp').css('display') == 'block') {
+    	$('#emailHelp').hide();
+    }
+
     // Check if message already and remove
 	if (emailInput.next().hasClass("invalid-feedback") || emailInput.next().hasClass("valid-feedback")) {
 		emailInput.next().remove();
@@ -93,6 +104,11 @@ function validatePass(element) {
 	// To change html
 	var passInput = $(element);
 	var pass = passInput.val();
+
+	// Remove ariadescribedby element
+    //if ($('#passwordHelpBlock').css('display') == 'block') {
+    //	$('#passwordHelpBlock').hide();
+    //}
 
 	// Check if message already and remove
 	if (passInput.next().hasClass("invalid-feedback") || passInput.next().hasClass("valid-feedback")) {
@@ -128,12 +144,12 @@ function validatePass(element) {
 	}
 	re = /[a-z]/;
 	if (!re.test(pass)) {
-		invalidPass("Password must contain at least one uppercase letter.");
+		invalidPass("Password must contain at least one lowercase letter.");
 		return false;
 	}
 	re = /[A-Z]/;
 	if (!re.test(pass)) {
-		invalidPass("Password must contain at least one lowercase letter.");
+		invalidPass("Password must contain at least one uppercase letter.");
 		return false;
 	}
 

@@ -25,6 +25,17 @@ html,
 	background-color: #f5f6fa;
 }
 
+.no-wrap {
+	white-space: nowrap;
+}
+
+div.form-line-break {
+	width: 100%;
+    height: 1px;
+    background-color: #ced4da;
+    margin: 30px 0 20px 0;
+}
+
 /* Intro */
 .intro-text {
 	margin: 50px auto 30px auto;
@@ -109,12 +120,21 @@ div.central-panel {
 	display: none;
 }
 
-div.form-row {
+.form-row {
 	margin: 10px 0;
 }
 
-div.form-row p {
+.form-row p {
 	margin-block-end: 0;
+}
+
+.form-col2 {
+	display: inline-block;
+	width: calc(50% - 7.2px);
+}
+
+.form-row .form-col2:first-child {
+	margin-right: 10px;
 }
 
 button.btn-block {
