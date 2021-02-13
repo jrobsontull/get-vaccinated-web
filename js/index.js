@@ -34,7 +34,12 @@ function nextRegisterDetails() {
 		// Save data to next div
 		$('input[name="f-name-hidden"]').attr('value', $('input[name="first-name"]').val());
 		$('input[name="l-name-hidden"]').attr('value', $('input[name="last-name"]').val());
-		$('input[name="address-hidden"]').attr('value', $('input[name="address"]').val());
+		$('input[name="address-l1-hidden"]').attr('value', $('input[name="address-l1"]').val());
+		$('input[name="address-l2-hidden"]').attr('value', $('input[name="address-l2"]').val());
+		$('input[name="address-city-hidden"]').attr('value', $('input[name="city"]').val());
+		$('input[name="address-county-hidden"]').attr('value', $('select[name="county"]').val());
+		$('input[name="address-postcode-hidden"]').attr('value', $('input[name="postcode"]').val());
+		$('input[name="address-country-hidden"]').attr('value', $('input[name="country"]').val());
 		$('input[name="mobile-hidden"]').attr('value', $('input[name="mobile"]').val());
 		$('input[name="dob-hidden"]').attr('value', $('input[name="dob"]').val());
 		// Navigate

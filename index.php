@@ -146,7 +146,12 @@
 				<input type="hidden" name="password-hidden">
 				<input type="hidden" name="f-name-hidden">
 				<input type="hidden" name="l-name-hidden">
-				<input type="hidden" name="address-hidden">
+				<input type="hidden" name="address-l1-hidden">
+				<input type="hidden" name="address-l2-hidden">
+				<input type="hidden" name="address-city-hidden">
+				<input type="hidden" name="address-county-hidden">
+				<input type="hidden" name="address-postcode-hidden">
+				<input type="hidden" name="address-country-hidden">
 				<input type="hidden" name="mobile-hidden">
 				<input type="hidden" name="dob-hidden">
 				<!--Form-->
