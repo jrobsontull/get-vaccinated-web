@@ -1,19 +1,21 @@
 .footer {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
 	margin: 20px 0;
 }
 
 .footer ul {
 	padding: 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .footer ul li {
 	text-decoration: none;
 	display: inline-block;
 	padding-right: 18px;
-	transition: all 0.2s linear;
+	transition: transform 0.2s linear;
+	transition: color 0.2s linear;
 }
 
 .footer ul li:last-child {
@@ -24,4 +26,11 @@
 	cursor: pointer;
 	transform: scale(1.05);
 	color: #0d6efd;
+}
+
+@media only screen and (max-width: 450px) {
+	.footer ul {
+		padding: 0 35px;
+	}
+
 }
