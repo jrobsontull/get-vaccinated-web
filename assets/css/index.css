@@ -36,6 +36,14 @@ div.form-line-break {
     margin: 30px 0 20px 0;
 }
 
+.box-header {
+	color: #212529;
+	font-size: 25px;
+	font-weight: 500;
+	display: block;
+	margin-bottom: 6px;
+}
+
 /* Main page */
 .intro-text {
 	margin: 50px auto 30px auto;
@@ -51,12 +59,32 @@ div.form-line-break {
 	margin-bottom: -10px;
 }
 
-#intro-header h1, #intro-header p {
+.intro-title, #intro-header p {
 	color: white;
+}
+
+.intro-title {
+	font-weight: 500;
+	font-size: 38px;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.intro-title .intro-blue {
+	font-weight: 700;
+	color: #00a8ff;
 }
 
 #intro-header p {
 	margin-bottom: 0px;
+}
+
+.how-title {
+	color: #212529;
+	font-size: 24px;
+	display: block;
+	font-weight: 500;
+	margin-bottom: 16px;
 }
 
 #explanation {

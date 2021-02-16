@@ -13,13 +13,9 @@
 .footer ul li {
 	text-decoration: none;
 	display: inline-block;
-	padding-right: 18px;
+	padding: 0 8px;
 	transition: transform 0.2s linear;
 	transition: color 0.2s linear;
-}
-
-.footer ul li:last-child {
-	padding-right: 0;
 }
 
 .footer ul li:hover {
@@ -30,7 +26,7 @@
 
 @media only screen and (max-width: 450px) {
 	.footer ul {
-		padding: 0 35px;
+		padding: 0 36px;
 	}
 
 }
