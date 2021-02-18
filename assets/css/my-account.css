@@ -1,0 +1,65 @@
+.container-div {
+	background-color: white;
+}
+
+.my-account-page {
+	display: flex;
+	flex-direction: row;
+	height: calc(100% - 60px);
+}
+
+.nav-bar {
+	background-color: #f5f6fa;
+	width: 18%;
+	min-width: 150px;
+}
+
+.option-boxes {
+	display: flex;
+	flex-direction: column;
+}
+
+.option-boxes div {
+	border-bottom: 1px solid #ced4da;
+	padding: 30px 16px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	transition: background-color 0.5s ease;
+}
+
+.option-boxes div.selected {
+	background-color: #e7e8ea;
+}
+
+.option-boxes div:hover {
+	cursor: pointer;
+	background-color: #e7e8ea;
+}
+
+.option-boxes p {
+	margin-bottom: 0;
+}
+
+.arrow {
+	border: solid #ced4da;
+ 	border-width: 0 3px 3px 0;
+ 	padding: 3px;
+ 	transform: rotate(-45deg);
+ 	height: 3px;
+ 	margin-left: 8px;
+}
+
+.options-display {
+	width: 82%;
+}
+
+.options-display > div {
+	padding: 30px 50px;
+}
+
+.vaccine-centre, .vaccine-slot {
+	display: none;
+}
