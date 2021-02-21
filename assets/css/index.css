@@ -253,3 +253,9 @@ div.verification {
 	margin-bottom: 0;
 	text-align: justify;
 }
+
+/* Forgot pass page */
+.forgot-pass p {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}

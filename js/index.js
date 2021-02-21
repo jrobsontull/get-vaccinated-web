@@ -272,3 +272,12 @@ $(document).ready(function() {
 		}
 	});
 });
+
+// Forgot pass validation
+function isValidForgotPassForm() {
+	if (!validateEmail($("input[name=\"forgot-pass-email\"]"))) {
+		return false;
+	} else {
+		return true;
+	}
+}
