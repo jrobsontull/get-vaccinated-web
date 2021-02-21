@@ -177,6 +177,17 @@ button.btn-block:last-child {
 	margin-right: 0; 
 }
 
+#forgot-pass a {
+	text-decoration: none;
+	color: #212529;
+	transition: color 0.3s ease;
+}
+
+#forgot-pass a:hover {
+	cursor: pointer;
+	color: #8995a1;
+}
+
 .login-txt {
 	font-weight: bold;
 	transition: color 0.3s ease;
