@@ -68,12 +68,54 @@ function prevRegisterDetails() {
 }
 
 function validateLostFocus(element) {
-	if ($(element).attr('type') == 'email') {
-		validateEmail(element);
-	} else if ($(element).attr('type') == 'password') {
-		validatePass(element);
-	} else if ($(element).attr('name') == 'postcode') {
-		validatePostcode(element);
+	// if ($(element).attr('type') == 'email') {
+	// 	validateEmail(element);
+	// } else if ($(element).attr('type') == 'password') {
+	// 	validatePass(element);
+	// } else if ($(element).attr('name') == 'postcode') {
+	// 	validatePostcode(element);
+	// }
+	switch ($(element).attr('name')) {
+		case 'email-first-page':
+			validateEmail(element);
+			break;
+		case 'password-first-page':
+			validatePass(element);
+			break;
+		case 'first-name':
+			validateEmptyField(element);
+			break;
+		case 'last-name':
+			validateEmptyField(element);
+			break;
+		case 'address-l1':
+			validateEmptyField(element);
+			break;
+		case 'city':
+			validateEmptyField(element);
+			break;
+		case 'postcode':
+			validatePostcode(element);
+			break;
+		case 'country':
+			validateEmptyField(element);
+			break;
+		case 'mobile':
+			validateNumber(element);
+			break;
+		case 'dob':
+			validateEmptyField(element);
+			break;
+	}
+}
+
+function inputStyling(element, error) {
+	if (error) {
+		$(element).removeClass("is-valid");
+		$(element).addClass("is-invalid");
+	} else {
+		$(element).removeClass("is-invalid");
+		$(element).addClass("is-valid");
 	}
 }
 
@@ -160,8 +202,7 @@ function validatePass(element) {
 		return false;
 	}
 
-	passInput.removeClass("is-invalid");
-	passInput.addClass("is-valid");
+	inputStyling(passInput, false)
 	passInput.after("<div class=\"valid-feedback\">Looks good!</div>");
 
 	return true;
@@ -172,19 +213,62 @@ function validatePostcode(element) {
 	var pcInput = $(element);
 	var pc = pcInput.val();
 
-	if (pc == "") {
-
+	if (!pc) {
+		pcInput.removeClass("is-valid");
+		pcInput.addClass("is-invalid");
+		return false;
 	} else {
 		// Validate
 		var url = "https://api.postcodes.io/postcodes/" + pc + "/validate";
 		$.getJSON(url, function(data) {
 			if (data.result) {
-				pcInput.removeClass("is-invalid");
-				pcInput.addClass("is-valid");
+				inputStyling(element, false);
+				return true;
 			} else {
-				pcInput.removeClass("is-valid");
-				pcInput.addClass("is-invalid");
+				inputStyling(element, true);
+				return false;
 			}
 		})
 	}
 }
+
+// Validate empty fields in forms
+function validateEmptyField(element) {
+	if (!$(element).val()) {
+		inputStyling(element, true);
+		return false;
+	} else {
+		inputStyling(element, false);
+		return true;
+	}
+}
+
+function validateNumber(element) {
+	re = /^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
+	if (!$(element).val()) {
+		inputStyling(element, true);
+		return false;
+	} else if (!re.test($(element).val())) {
+		inputStyling(element, true);
+		return false;
+	} else {
+		inputStyling(element, false);
+		return true;
+	}
+}
+
+// T&Cs checkbox
+$(document).ready(function() {
+	tc_chk = $('#tandc');
+	tc_chk.change(function() {
+		if($(this).is(':checked')) {
+			$('#register-btn').prop('disabled', false);
+			$('#register-btn').removeClass('btn-outline-secondary');
+			$('#register-btn').addClass('btn-outline-primary');
+		} else {
+			$('#register-btn').prop('disabled', true);
+			$('#register-btn').removeClass('btn-outline-primary');
+			$('#register-btn').addClass('btn-outline-secondary');
+		}
+	});
+});

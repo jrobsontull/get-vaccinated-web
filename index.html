@@ -62,16 +62,16 @@
 			<div id="register-2">
 				<div class="form-row">
 					<label>First name</label>
-					<input type="text" name="first-name" class="form-control" id="firstName">
+					<input type="text" name="first-name" class="form-control" id="firstName" onblur="validateLostFocus(this)">
 				</div>
 				<div class="form-row">
 					<label>Last name</label>
-					<input type="text" name="last-name" class="form-control" id="lastName">
+					<input type="text" name="last-name" class="form-control" id="lastName" onblur="validateLostFocus(this)">
 				</div>
 				<div class="form-row form-line-break"></div>
 				<div class="form-row">
 					<label class="">Address</label>
-					<input type="text" class="form-control" name="address-l1" aria-describedby="line-1">
+					<input type="text" class="form-control" name="address-l1" aria-describedby="line-1" onblur="validateLostFocus(this)">
 					<div id="line-1" class="form-text">
 		    			Street address
 		    		</div>
@@ -84,7 +84,7 @@
 				</div>
 				<div class="form-row no-wrap">
 					<div class="form-col2">
-						<input type="text" class="form-control" name="city" aria-describedby="city-help">
+						<input type="text" class="form-control" name="city" aria-describedby="city-help" onblur="validateLostFocus(this)">
 						<div id="city-help" class="form-text">
 			    			City
 			    		</div>
@@ -105,7 +105,7 @@
 			    		</div>
 		    		</div>
 		    		<div class="form-col2">
-						<input type="text" class="form-control" name="country" aria-describedby="country-help">
+						<input type="text" class="form-control" name="country" aria-describedby="country-help" onblur="validateLostFocus(this)">
 						<div id="country-help" class="form-text">
 			    			Country
 			    		</div>
@@ -114,11 +114,11 @@
 				<div class="form-row form-line-break"></div>
 				<div class="form-row">
 					<label class="">Mobile</label>
-					<input type="tel" name="mobile" class="form-control" id="mobile">
+					<input type="tel" name="mobile" class="form-control" id="mobile" onblur="validateLostFocus(this)">
 				</div>
 				<div class="form-row">
 					<label class="">Birth date</label>
-					<input type="date" name="dob" class="form-control" id="dob">
+					<input type="date" name="dob" class="form-control" id="dob" onblur="validateLostFocus(this)">
 				</div>
 				<div class="center-row-item form-row">
 					<button type="button" class="btn btn-outline-primary btn-block" onclick="prevRegisterDetails()">Previous</button>
@@ -151,26 +151,32 @@
 			    		Here you can choose the vaccine centre that you will receive alerts from about available, spare, vaccine.
 			    	</div>
 				</div>
+				<div class="form-row form-line-break"></div>
 				<div class="form-row">
-					<label>Alerts</label>
+					<label>How do you want to be notified about available COVID vaccine?</label>
+				</div>
+				<div class="form-row">
                 	<input type="checkbox" class="form-check-input" id="emailAlert">
                 	<label class="form-check-label" for="emailAlert">Email</label>
+                </div>
+                <div class="form-row">
                 	<input type="checkbox" class="form-check-input" id="textAlert">
                 	<label class="form-check-label" for="textAlert">Text message</label>
 				</div>
 				<div class="form-row form-line-break"></div>
 				<div class="form-row">
-					<label>T&amp;Cs read?</label>
+					<label>Have you read and do you agree to our <a href="#">Terms &amp; Conditions</a>?</label>
+				</div>
+				<div class="form-row">
                 	<input type="checkbox" class="form-check-input" id="tandc">
                 	<label class="form-check-label" for="emailAlert">Agree</label>
 				</div>
-				<div class="form-row form-line-break"></div>
 				<div class="form-row">
 			    	<div class="g-recaptcha" data-sitekey="6Lda7E0aAAAAAK35uEGsvY_wjxCPKNNCCmxMW8EE"></div>
 				</div>
 				<div class="center-row-item form-row">
 					<button type="button" class="btn btn-outline-primary btn-block" onclick="prevRegisterDetails()">Previous</button>
-					<button type="submit" name="register" class="btn btn-outline-primary btn-block">Register</button>
+					<button type="submit" name="register" class="btn btn-outline-secondary btn-block" id="register-btn" disabled>Register</button>
 				</div>
 			</div>
 		</form>

@@ -177,6 +177,11 @@ button.btn-block:last-child {
 	margin-right: 0; 
 }
 
+button:disabled {
+	cursor: not-allowed;
+	pointer-events: all !important;
+}
+
 #forgot-pass a {
 	text-decoration: none;
 	color: #212529;
